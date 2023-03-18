@@ -3,6 +3,7 @@ import tkinter as tk
 import random
 import datetime
 import webbrowser
+from PIL import Image, ImageTk
 
 
 # Bible verses to choose from
@@ -97,6 +98,17 @@ greeting = tk.Label(
     height = 10)
 # print greeting to screen
 greeting.grid(row = 0, column = 0, columnspan = 2)
+
+image = Image.open("Bible verse widget.png")
+# Create a PhotoImage object of the image
+photo = ImageTk.PhotoImage(image)
+# Create a label with the PhotoImage object as its image
+label = tk.Label(window, 
+    image = photo, 
+    bg = "#242526", 
+    )
+# Add the label to the window
+label.grid(row = 0, column = 1, columnspan = 1)
 
 
 user_name_call = tk.Label(
